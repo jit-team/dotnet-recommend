@@ -8,7 +8,7 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding Recomendations}" Margin="0,0,0.4,0.2" >
+        <ListView ItemsSource="{Binding Recomendations}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="Auto" Header="Title" DisplayMemberBinding="{Binding Title}" />

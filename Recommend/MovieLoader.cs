@@ -4,27 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Recommend
+namespace Model
 {
-    class MovieLoader
+    class DataLoader
     {
-        public static List<Model.Movie> Read(string filename)
+        public static List<Movie> ReadItemLabels(string filename)
         {
-            List<Model.Movie> result = new List<Model.Movie>();
+            List<Movie> result = new List<Movie>();
 
             System.IO.StreamReader myFile = new System.IO.StreamReader(filename);
             while (myFile.EndOfStream == false)
             {
                 string line = myFile.ReadLine();
                 var m = line.Split('|');
-                result.Add(new Model.Movie() { Id = int.Parse(m[0]), Title = m[1], Link = m[4] });
+                result.Add(new Movie { Id = int.Parse(m[0]), Title = m[1], Link = m[4] });
             }
 
 
             return result;
         }
 
-        public static List<Tuple<int, int, float>> ReadPredictions(string filename)
+        public static List<Tuple<int, int, float>> ReadTrainingData(string filename)
         {
             List<Tuple<int, int, float>> result = new List<Tuple<int, int, float>>();
             System.IO.StreamReader myFile = new System.IO.StreamReader(filename);

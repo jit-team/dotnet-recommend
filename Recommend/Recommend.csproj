@@ -76,7 +76,7 @@
     </ApplicationDefinition>
     <Compile Include="Engine.cs" />
     <Compile Include="MovieLoader.cs" />
-    <Compile Include="ViewModel.cs" />
+    <Compile Include="MainViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -9,9 +9,9 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight;
 using System.Windows;
 
-namespace Recommend
+namespace ViewModel
 {
-    class ViewModel : ViewModelBase
+    class MainViewModel : ViewModelBase
     {
         private readonly List<Movie> _movies;
         private readonly List<Tuple<int, int, float>> _trainData;
@@ -31,14 +31,14 @@ namespace Recommend
 
         public string Log { get; set; }
 
-        public ViewModel()
+        public MainViewModel()
         {
             // please adjust this to meet your system layout ...
             // obviously this should be changed to load file dialog usage :)
             try
             {
-                _movies = MovieLoader.Read("u.item");
-                _trainData = MovieLoader.ReadPredictions("u.data");
+                _movies = DataLoader.ReadItemLabels("u.item");
+                _trainData = DataLoader.ReadTrainingData("u.data");
             }
             catch (Exception)
             {

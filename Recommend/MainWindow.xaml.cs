@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace Recommend
 {
@@ -26,7 +27,7 @@ namespace Recommend
             InitializeComponent();
             try
             {
-                this.DataContext = new ViewModel();
+                this.DataContext = new MainViewModel();
             }
             catch (Exception)
             {
